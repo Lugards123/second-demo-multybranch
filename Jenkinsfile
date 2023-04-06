@@ -15,7 +15,7 @@ pipeline{
         }
         stage('sub-job2'){
           steps{
-            echo 'testing first buld'
+            echo 'testing '
           }
         }
       }
