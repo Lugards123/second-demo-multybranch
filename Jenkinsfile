@@ -23,7 +23,7 @@ pipeline{
     stage('codebuild'){
     	steps{
         echo 'thank you elifeTech'
-        echo 'the new week is here'
+
     	}
     }
   }
