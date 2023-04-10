@@ -22,7 +22,7 @@ pipeline{
     }
     stage('codebuild'){
     	steps{
-    		sh 'cat /etc/passwd'
+        echo 'thank you elifeTech'
     	}
     }
   }
