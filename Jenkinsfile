@@ -3,7 +3,7 @@ pipeline{
   stages{
   	stage('version-control'){
   		steps{
-  			checkout([$class: 'GitSCM', branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[credentialsId: 'github-id', url: 'https://github.com/Lugards123/second-demo-multybranch.git']]])
+  			checkout([$class: 'GitSCM', branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[credentialsId: 'github-id', url: 'https://github.com/etechDevops/jenkins-parallel-job.git']]])
   		}
   	}
     stage('parallel-job'){
@@ -15,15 +15,19 @@ pipeline{
         }
         stage('sub-job2'){
           steps{
-            echo 'testing'
+            echo 'action2'
           }
+        }
+        stage('sub-job3'){
+            steps{
+                echo 'action3'
+            }
         }
       }
     }
     stage('codebuild'){
     	steps{
-        echo 'thank you elifeTech'
-        echo 'the new week is here'
+    		sh 'cat /etc/passwd'
     	}
     }
   }
